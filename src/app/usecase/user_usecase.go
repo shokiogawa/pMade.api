@@ -14,7 +14,7 @@ type userUseCase struct {
 	userRepository repository.UserRepository
 }
 
-func (uu userUseCase) GetUser(ctx context.Context) (users []*model.User, err error) {
+func (uu *userUseCase) GetUser(ctx context.Context) (users []*model.User, err error) {
 	users, err = uu.userRepository.GetUser(ctx)
 	if err != nil {
 		return nil, err
